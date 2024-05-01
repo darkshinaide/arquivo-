@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <title>Upload de Arquivos</title>
+</head>
+<body>
+    <h1>Upload de Arquivos para Pasta</h1>
+
+
+    <form action="upload.php" method="post" enctype="multipart/form-data"> 
+        <input type="file" name="arquivos[]" multiple> 
+        <input type="submit" value="Enviar"> 
+    </form>
+   
+    </form>
+    <?php if (!empty($mensagens)): ?>
+        <h2>Resultado do Upload:</h2>
+        <ul>
+            <?php foreach ($mensagens as $mensagem): ?>
+                <li><?php echo $mensagem; ?></li>
+            <?php endforeach; ?>
+        </ul>
+    <?php endif; ?>
+</body>
+</html>
